@@ -21,7 +21,7 @@
       </div>
       <div class="col-md-8">
         <div class="row">
-          <h1 class='font-weight-bold text-monospace' style='text-align:center;'>Set My Lights</h1>
+          <h1 class='font-weight-bold text-monospace' style='text-align:center;'>Set My Lights v0.1</h1>
         </div>
         <div class="row">  
           <p>by <a href="https://twitter.com/mrkprdo" target="_blank" >@mrkprdo</a><p>
@@ -32,9 +32,9 @@
               <h4>Set Light Color:</h4>
             </div>
             <div class="row">
-              <form class="form-inline">
+              <form class="form-inline" method="POST" action="/set">
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" id="color" name="color" value="#007bff"/>
+                  <input type="text" class="form-control" id="color" name="color" value="{{ hexcolor }}"/>
                 </div>
                 <button type="submit" class="btn btn-outline-primary mb-2">Apply</button>
               </form>
@@ -44,7 +44,12 @@
             </div>
           </div>
           <div class="col-md-6">
-            <h4>Live Feed:</h4>
+            <div class="row">
+             <h4>Live Feed:</h4>
+            </div>
+            <div class="row">
+             <img style="-webkit-user-select: none;margin: auto;" src="https://setmylights.com/live_feed">
+            </div>
           </div>
         </div>
       </div>
