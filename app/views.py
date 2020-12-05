@@ -13,17 +13,18 @@ def save(color):
         with open('color_state','w+') as ff:
             ff.write(color)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     COLOR_STATE = read()
     return render_template('index.html',hexcolor=COLOR_STATE)
 
-@app.route('/set', methods=['POST'])
+@app.route('/', methods=['POST'])
 def set_value():
     data = request.form.to_dict(flat=False)
     save(data['color'][0])
     COLOR_STATE = read()
     return render_template('index.html',hexcolor=COLOR_STATE)
+    
 
 @app.route('/get', methods=['GET'])
 def get_value():
